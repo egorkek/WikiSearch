@@ -8,7 +8,7 @@ function $(tag) {
 }
 
 function transformToHtml(link, title, info) {
-    return `<a href=${link}><div class='divich'>
+    return `<a href=${link} target="_blank"><div class='divich'>
                 <h1>${title}</h1>
                 <p>${info}</p>
             </div></a>`
@@ -17,7 +17,7 @@ function transformToHtml(link, title, info) {
 FORM.addEventListener('submit', async (e) => {
     LOADING.style.display = 'inline-block'
     e.preventDefault();
-    const url = `https://en.wikipedia.org/w/api.php?action=opensearch&origin=*&format=json&search=${INPUT.value}`
+    const url = `https://ru.wikipedia.org/w/api.php?action=opensearch&origin=*&format=json&search=${INPUT.value}`
     axios.get(url)
         .then(res => {
             LOADING.style.display = 'none'
